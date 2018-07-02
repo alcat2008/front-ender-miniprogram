@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="detail_container">
+  <view wx:if="{{ isLoading }}" class="loadmore">
+    <loadmore />
+  </view>
+  <swiper class="swiper" indicator-dots="{{ true }}" autoplay="{{true}}" circular="{{true}}">
+    <block wx:key="index" wx:for="{{ banners }}" wx:for-item="banner">
+      <swiper-item>
+        <image class="banner" lazy-load="{{ true }}" src="{{ banner }}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="heading">{{ goodsName }}</view>
+  <view class="subheading">
+    <view class="price">¥ {{ price }}</view>
+    <view class="sold">已售 {{ sold }}</view>
+  </view>
+
+  <panel class="specification">
+    <cell title="只显示箭头" is-link bindtap="_handleSpecTap"></cell>
+  </panel>
+  <!-- 商品规格选择框 -->
+  <popup
+    show="{{ showSpecs }}"
+    type="bottom"
+    bind:close="_toggleSpecPopup"
+  >
+    <view class="popup_container">
+      <text>guige</text>
+    </view>
+  </popup>
+  
+  <view class="info">
+    <view class="title">--- 商品详情 ---</view>
+    <block wx:for="{{ images }}">
+      <image class="info-img" lazy-load="{{ true }}" src="{{ item }}" mode="widthFix" />
+    </block>
+  </view>
+</view>

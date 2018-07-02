@@ -1,0 +1,42 @@
+.goods_container {
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.loadmore {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.wrapper {
+  width: 375rpx;
+  padding: 30rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.img {
+  width: 315rpx;
+  height: 315rpx;
+  background-color: #f5f5f5;
+  border-radius: 2.5%;
+}
+
+.title {
+  padding: 12rpx 0 4rpx 0;
+  font-size: 14px;
+  color: #888888;
+  letter-spacing: 0.5px;
+}
+
+.price {
+  color: #FD5729;
+  font-size: 13px;
+}

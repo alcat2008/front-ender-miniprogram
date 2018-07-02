@@ -1,0 +1,6 @@
+<view class="dx_loadmore dx_loadmore_line">
+  <view class="dx_loadmore__tips dx_loadmore__tips_in-line">
+    <view class="dx_loading"></view>
+    {{ innerText }}
+  </view>
+</view>

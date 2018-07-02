@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="goods_container">
+  <block wx:key="index" wx:for="{{ goods }}" wx:for-item="good">
+    <navigator class="wrapper" url="/pages/detail/index?id={{ good.goodsId }}">
+      <image class="img" lazy-load="{{ true }}" src="{{ good.imgUrl }}" />
+      <text class="title">{{ good.goodsName }}</text>
+      <text class="price">¥ {{ good.price }}</text>
+    </navigator>
+  </block>
+  <view class="loadmore" style="display: {{ isLoading ? 'block' : 'none' }}">
+    <loadmore />
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<view class="dx_panel">
+  <view
+    wx:if="{{ title }}"
+    class="dx_panel__title">{{ title }}</view>
+  <view
+    class="dx_panel__content {{ hideBorder ? 'dx_panel--without-border' : '' }}"
+  >
+    <slot></slot>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<view
+  class="dx_popup dx_popup__{{ type }} {{ show ? 'dx_popup__show' : '' }}"
+>
+  <view 
+    wx:if="{{ overlay }}"
+    class="dx_popup__overlay {{ showOverlay ? '' : 'dx_popup__overlay_hide' }}"
+    bind:tap="_handleOverlayClick"
+  ></view>
+  <view class="dx_popup__container">
+    <slot></slot>
+  </view>
+</view>

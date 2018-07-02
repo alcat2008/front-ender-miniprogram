@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/detail/index",
+    "pages/goods/index",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "navigationBarTitleText": "前端行知录",
+    "enablePullDownRefresh": true
+  }
+}

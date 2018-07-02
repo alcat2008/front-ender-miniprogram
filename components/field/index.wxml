@@ -1,0 +1,39 @@
+<cell
+  class="field-class dx_field {{ error ? 'dx_field--error' : '' }} {{ mode === 'wrapped' ? 'dx_field--wrapped' : '' }} {{ !showBorder ? 'dx_field--no-border' : '' }}"
+  cell-class="dx_cell--field"
+>
+  <view
+    slot="icon"
+    wx:if="{{ title }}"
+    class="dx_cell__hd dx_field__title">
+    {{ title }}
+  </view>
+  <textarea
+    wx:if="{{ type === 'textarea' }}"
+    auto-height
+    disabled="{{ disabled }}"
+    focus="{{ focus }}"
+    value="{{ value }}"
+    placeholder="{{ placeholder }}"
+    maxlength="{{ maxlength }}"
+    class="dx_field__input dx_cell__bd {{ right ? 'dx_field__input--right' : '' }}"
+    placeholder-class="dx_field__placeholder"
+    bindinput="handleFieldChange"
+    bindfocus="handleFieldFocus"
+    bindblur="handleFieldBlur"
+  ></textarea>
+  <input
+    wx:else
+    type="{{ inputType || 'text' }}"
+    disabled="{{ disabled }}"
+    focus="{{ focus }}"
+    value="{{ value }}"
+    placeholder="{{ placeholder }}"
+    maxlength="{{ maxlength }}"
+    class="dx_field__input dx_cell__bd {{ right ? 'dx_field__input--right' : '' }}"
+    placeholder-class="dx_field__placeholder"
+    bindinput="handleFieldChange"
+    bindfocus="handleFieldFocus"
+    bindblur="handleFieldBlur"
+  />
+</cell>

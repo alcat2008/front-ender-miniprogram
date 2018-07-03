@@ -52,12 +52,6 @@ Page({
       }
     })
   },
-  onShareAppMessage () {
-    return {
-      title: '前端行知录',
-      path: '/page/user?id=123'
-    }
-  },
   onPullDownRefresh () {
     console.log('** onPullDownRefresh **')
     this.setData({

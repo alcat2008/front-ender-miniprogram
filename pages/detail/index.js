@@ -1,12 +1,12 @@
 Page({
   data: {
-    isLoading: true,
     goodsId: '',
     goodsName: '',
     banners: [],
     price: 0,
     sold: 0,
     specification: [],
+    selectedSpec: '',
     showSpecs: false,
     images: [],
   },
@@ -24,17 +24,16 @@ Page({
             title: detail.goodsName
           })
           this.setData({
-            isLoading: false,
             goodsId: detail.goodsId,
             goodsName: detail.goodsName,
             banners: detail.banners,
             price: detail.price,
             sold: detail.alreadySale,
             specification: detail.specification,
+            selectedSpec: detail.specification.map(spec => spec.propertyChildren[0].propertyName)[0],
             images: detail.images,
           })
         }
-        wx.hideNavigationBarLoading()
       },
       complete: () => {
         wx.hideNavigationBarLoading()

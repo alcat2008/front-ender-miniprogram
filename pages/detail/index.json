@@ -2,7 +2,6 @@
   "navigationBarTitleText": "商品详情",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "loadmore": "../../components/loadmore/index",
     "panel": "../../components/panel/index",
     "cell": "../../components/cell/index",
     "popup": "../../components/popup/index"

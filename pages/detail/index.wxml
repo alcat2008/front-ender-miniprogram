@@ -1,8 +1,5 @@
 <!--index.wxml-->
 <view class="detail_container">
-  <view wx:if="{{ isLoading }}" class="loadmore">
-    <loadmore />
-  </view>
   <swiper class="swiper" indicator-dots="{{ true }}" autoplay="{{true}}" circular="{{true}}">
     <block wx:key="index" wx:for="{{ banners }}" wx:for-item="banner">
       <swiper-item>
@@ -17,7 +14,12 @@
   </view>
 
   <panel class="specification">
-    <cell title="只显示箭头" is-link bindtap="_handleSpecTap"></cell>
+    <cell is-link bindtap="_handleSpecTap">
+      <view>
+        <text class="specification_title">已选： </text>
+        <text>{{ selectedSpec }}</text>
+      </view>
+    </cell>
   </panel>
   <!-- 商品规格选择框 -->
   <popup
@@ -31,9 +33,16 @@
   </popup>
   
   <view class="info">
-    <view class="title">--- 商品详情 ---</view>
-    <block wx:for="{{ images }}">
+    <view class="title">- 商品详情 -</view>
+    <block wx:key="{{ *this }}" wx:for="{{ images }}">
       <image class="info-img" lazy-load="{{ true }}" src="{{ item }}" mode="widthFix" />
     </block>
+  </view>
+
+  <view class="footer">
+    <image class="service-icon" src="./customer.png" />
+    <image class="service-icon" src="./cart.png" />
+    <view class="add">加入购物车</view>
+    <view class="instant">立即购买</view>
   </view>
 </view>

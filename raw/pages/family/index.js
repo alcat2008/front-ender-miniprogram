@@ -10,7 +10,7 @@ Page({
     wx.showNavigationBarLoading()
     const { currentPage, pageSize, activities } = this.data
     wx.request({
-      url: 'http://localhost:3003/api/family/activities',
+      url: 'https://front-ender.cn/api/family/activities',
       method: 'POST',
       data: {
         currentPage,

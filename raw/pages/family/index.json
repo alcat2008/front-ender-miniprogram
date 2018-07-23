@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "亲子活动",
+  "usingComponents": {
+    "loadmore": "../../components/loadmore/index"
+  }
+}

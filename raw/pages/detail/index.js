@@ -13,10 +13,10 @@ Page({
   onLoad (option) {
     wx.showNavigationBarLoading()
     wx.request({
-      url: 'http://localhost:3000/api/shop/v7/mall/goods/detail',
+      url: 'https://capimall.jcease.com/api/shop/v7/mall/goods/detail',
       method: 'POST',
-      // data: { goodsId: option.id },
-      data: { goodsId: '77c5508e9a034a959fe58a9ccaa4266a' },
+      data: { goodsId: option.id },
+      // data: { goodsId: '77c5508e9a034a959fe58a9ccaa4266a' },
       success: ({ statusCode, data }) => {
         if (statusCode === 200 && data.code === 0) {
           const detail = data.data
@@ -30,7 +30,7 @@ Page({
             price: detail.price,
             sold: detail.alreadySale,
             specification: detail.specification,
-            selectedSpec: detail.specification.map(spec => spec.propertyChildren[0].propertyName)[0],
+            selectedSpec: detail.specification.map(spec => spec.propertyChildren[0].propertyName)[0] || '',
             images: detail.images,
           })
         }

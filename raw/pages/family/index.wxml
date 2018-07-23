@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="activities_container">
+  <block wx:key="index" wx:for="{{ activities }}" wx:for-item="activity">
+    <navigator class="wrapper" url="../preview/index?url={{ activity.url }}">
+      <image class="img" lazy-load="{{ true }}" src="{{ activity.thumbnail }}" mode="widthFix" />
+      <text class="title">{{ activity.name }}</text>
+      <text class="brief">{{ activity.brief }}</text>
+      <!-- <text class="price">¥ {{ activity.price }}</text> -->
+    </navigator>
+  </block>
+  <view class="loadmore" style="display: {{ isLoading ? 'block' : 'none' }}">
+    <loadmore />
+  </view>
+</view>

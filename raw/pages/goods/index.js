@@ -12,7 +12,7 @@ Page({
     wx.showNavigationBarLoading()
     const { currentPage, pageSize, categoryId, goods } = this.data
     wx.request({
-      url: 'http://localhost:3000/api/shop/v6/mall/goods/list',
+      url: 'https://capimall.jcease.com/api/shop/v6/mall/goods/list',
       method: 'POST',
       data: {
         currentPage,
@@ -37,7 +37,7 @@ Page({
   },
   onLoad () {
     wx.request({
-      url: 'http://localhost:3000/api/shop/mall/category/shopList',
+      url: 'https://capimall.jcease.com/api/shop/mall/category/shopList',
       method: 'POST',
       data: {},
       success: ({ statusCode, data }) => {

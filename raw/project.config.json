@@ -1,5 +1,5 @@
 {
-	"description": "前端行知录",
+	"description": "前端行知录 - raw",
 	"packOptions": {
 		"ignore": []
 	},
@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.1.1",
 	"appid": "wx6269fb292f2f751d",
-	"projectname": "%E5%89%8D%E7%AB%AF%E8%A1%8C%E7%9F%A5%E5%BD%95",
+	"projectname": "%E5%89%8D%E7%AB%AF%E8%A1%8C%E7%9F%A5%E5%BD%95%20-%20raw",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

@@ -1,0 +1,21 @@
+<style lang="less">
+
+</style>
+
+<template>
+  <web-view src="{{ url }}"></web-view>
+</template>
+
+<script>
+import wepy from 'wepy'
+
+export default class Preview extends wepy.page {
+  data = {
+    url: ''
+  };
+
+  onLoad (options) {
+    this.url = decodeURIComponent(options.url)
+  }
+}
+</script>

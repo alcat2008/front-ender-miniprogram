@@ -1,0 +1,134 @@
+
+<style lang="less">
+.activities_container {
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.loadmore {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 30rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.img {
+  width: 100%;
+  background-color: #f5f5f5;
+  border-radius: 2.5%;
+}
+
+.title {
+  padding: 12rpx 0 4rpx 0;
+  font-size: 14px;
+  /* color: #888888; */
+  letter-spacing: 0.5px;
+}
+.brief {
+  font-size: 12px;
+}
+.price {
+  color: #FD5729;
+  font-size: 13px;
+}
+</style>
+
+<template lang="wxml">
+  <view class="activities_container">
+    <block wx:key="index" wx:for="{{ activities }}" wx:for-item="activity">
+      <navigator class="wrapper" url="/pages/preview?url={{ activity.url }}">
+        <image class="img" lazy-load="{{ true }}" src="{{ activity.thumbnail }}" mode="widthFix" />
+        <text class="title">{{ activity.name }}</text>
+        <text class="brief">{{ activity.brief }}</text>
+        <!-- <text class="price">¥ {{ activity.price }}</text> -->
+      </navigator>
+    </block>
+    <view class="loadmore" style="display: {{ isLoading ? 'block' : 'none' }}">
+      <loadmore />
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import Loadmore from '../components/loadmore'
+
+export default class Family extends wepy.page {
+  config = {
+    'navigationBarTitleText': '亲子活动'
+  };
+  components = {
+    loadmore: Loadmore
+  };
+
+  data = {
+    isLoading: true,
+    currentPage: 1,
+    totalPage: 1,
+    pageSize: 6,
+    activities: []
+  };
+  methods = {};
+
+  events = {};
+  // Other properties
+
+  async _fetch () {
+    wx.showNavigationBarLoading()
+    const { currentPage, pageSize, activities } = this
+
+    try {
+      const res = await wepy.request({
+        url: 'https://front-ender.cn/api/family/activities',
+        method: 'POST',
+        data: {
+          currentPage,
+          pageSize
+        }
+      })
+      const { statusCode, data } = res
+      if (statusCode === 200 && data.code === 0) {
+        this.isLoading = false
+        this.currentPage = data.data.page.currentPage
+        this.totalPage = data.data.page.totalPage
+        this.activities = (currentPage === 1 ? data.data.data : activities.concat(data.data.data))
+          .map(a => Object.assign({}, a, { url: encodeURIComponent(a.url) }))
+        this.$apply()
+      }
+    } finally {
+      wx.hideNavigationBarLoading()
+    }
+  }
+  async onLoad () {
+    await this._fetch()
+  }
+  async onPullDownRefresh () {
+    console.log('** onPullDownRefresh **')
+
+    this.currentPage = 1
+    await this._fetch()
+    wx.stopPullDownRefresh()
+  }
+  onReachBottom () {
+    console.log('** onReachBottom **')
+    const { currentPage, totalPage } = this
+    if (currentPage < totalPage) {
+      this.isLoading = true
+      this.currentPage = currentPage + 1
+      this._fetch()
+    }
+  }
+}
+</script>

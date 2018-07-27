@@ -205,6 +205,13 @@
   version "0.7.0"
   resolved "http://registry.npm.taobao.org/@sindresorhus/is/download/@sindresorhus/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
+"@tarojs/async-await@^0.0.73":
+  version "0.0.73"
+  resolved "http://registry.npm.taobao.org/@tarojs/async-await/download/@tarojs/async-await-0.0.73.tgz#d31f95d6d57d311df39dcbbff73602f12550471e"
+  dependencies:
+    promise-polyfill "^7.1.2"
+    regenerator-runtime "^0.11.1"
+
 "@tarojs/cli@^0.0.73":
   version "0.0.73"
   resolved "http://registry.npm.taobao.org/@tarojs/cli/download/@tarojs/cli-0.0.73.tgz#1fa4d21a207656ae77501ed1c84067a0bc2ca5b4"
@@ -271,8 +278,8 @@
     less "^3.0.4"
 
 "@tarojs/plugin-typescript@^0.0.73":
-  version "0.0.72"
-  resolved "http://registry.npm.taobao.org/@tarojs/plugin-typescript/download/@tarojs/plugin-typescript-0.0.72.tgz#86cd0734bddd88ce3f3ad68d36e74ae073cd727c"
+  version "0.0.73"
+  resolved "http://registry.npm.taobao.org/@tarojs/plugin-typescript/download/@tarojs/plugin-typescript-0.0.73.tgz#d0372c793bfcbe09bbad3ae305ac3c56b0c766bc"
   dependencies:
     typescript "^2.9.2"
 
@@ -5248,6 +5255,10 @@ promise-inflight@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/promise-inflight/download/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
 
+promise-polyfill@^7.1.2:
+  version "7.1.2"
+  resolved "http://registry.npm.taobao.org/promise-polyfill/download/promise-polyfill-7.1.2.tgz#ab05301d8c28536301622d69227632269a70ca3b"
+
 promise@^7.1.1:
   version "7.3.1"
   resolved "http://registry.npm.taobao.org/promise/download/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
@@ -5466,7 +5477,7 @@ regenerate@^1.2.1:
   version "1.4.0"
   resolved "http://registry.npm.taobao.org/regenerate/download/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
 
-regenerator-runtime@^0.11.0:
+regenerator-runtime@^0.11.0, regenerator-runtime@^0.11.1:
   version "0.11.1"
   resolved "http://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
 

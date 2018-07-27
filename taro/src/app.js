@@ -1,6 +1,8 @@
-import Taro, { Component } from '@tarojs/taro'
-import Index from './pages/index'
 
+import '@tarojs/async-await'
+import Taro, { Component } from '@tarojs/taro'
+// import Index from './pages/index'
+import Family from './pages/family'
 import './app.less'
 
 class App extends Component {
@@ -27,7 +29,7 @@ class App extends Component {
 
   render () {
     return (
-      <Index />
+      <Family />
     )
   }
 }

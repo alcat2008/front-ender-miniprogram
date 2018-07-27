@@ -25,3 +25,7 @@
 - [wepy-zanui](./wepy-zanui)
 
   基于 [zanui](https://github.com/youzan/zanui-weapp) 移植的一套 wepy 界面框架
+
+- [touchwx](./touchwx)
+
+  [Touch WX](https://github.com/uileader/touchwx) 小程序组件化解决方案

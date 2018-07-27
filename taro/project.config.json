@@ -1,5 +1,4 @@
 {
-	"miniprogramRoot": "./dist",
 	"projectname": "%E5%89%8D%E7%AB%AF%E8%A1%8C%E7%9F%A5%E5%BD%95%20-%20taro",
 	"description": "前端行知录 - taro",
 	"appid": "touristappid",
@@ -11,5 +10,6 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
+	"miniprogramRoot": "./dist",
 	"condition": {}
 }

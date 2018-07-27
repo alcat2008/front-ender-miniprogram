@@ -1,0 +1,12 @@
+{
+  "name": "touchui-wx-components",
+  "description": "TouchUI 小程序组件库",
+  "version": "1.0.12",
+  "author": "UI Leader",
+  "license": "MIT",
+  "dependencies": {
+    "lodash.merge": "^4.6.1",
+    "lodash.trim": "^4.5.1",
+    "moment": "^2.21.0"
+  }
+}

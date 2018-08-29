@@ -34,7 +34,7 @@
   
   <view class="info">
     <view class="title">- 商品详情 -</view>
-    <block wx:key="{{ *this }}" wx:for="{{ images }}">
+    <block wx:key="*this" wx:for="{{ images }}">
       <image class="info-img" lazy-load="{{ true }}" src="{{ item }}" mode="widthFix" />
     </block>
   </view>
